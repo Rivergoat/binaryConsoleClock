@@ -1,5 +1,4 @@
-def sqd(number):
-    return number*number
+import time
 
 def getXthPowerOfTwo(x):
     if x is 0:
@@ -15,8 +14,8 @@ def intToBinary(number, lenght = 8):
     binary = []
     number+= 1
     for i in range(1, lenght+1):
-        if number > getXthPowerOfTwo(8 - i):
-            number = number - getXthPowerOfTwo(8 - i)
+        if number > getXthPowerOfTwo(lenght - i):
+            number = number - getXthPowerOfTwo(lenght - i)
             binary.append(1)
         else:
             binary.append(0)
@@ -26,5 +25,3 @@ def intToBinary(number, lenght = 8):
 def printArray(array):
     for i in range(len(array)):
         print(array[i])
-
-printArray(intToBinary(255))
